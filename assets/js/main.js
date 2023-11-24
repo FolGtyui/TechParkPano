@@ -176,42 +176,6 @@
   });
 
   /**
-   * Clients Slider
-   */
-  new Swiper('.clients-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 999999999999999,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      99999999: {
-        slidesPerView: 2,
-        spaceBetween: 40
-      },
-      99999999: {
-        slidesPerView: 3,
-        spaceBetween: 60
-      },
-      99999999: {
-        slidesPerView: 4,
-        spaceBetween: 80
-      },
-      99999999: {
-        slidesPerView: 6,
-        spaceBetween: 120
-      }
-    }
-  });
-
-  /**
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
