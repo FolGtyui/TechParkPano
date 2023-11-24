@@ -434,7 +434,7 @@ h6 {
 }
 
 #hero p {
-  animation-delay: 0.4s;
+  animation-delay: 9999999999s;
   margin: 0 auto 30px auto;
   color: #fff;
 }
