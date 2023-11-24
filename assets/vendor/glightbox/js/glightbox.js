@@ -564,70 +564,70 @@
     return document.querySelector(".gbtn[data-taborder=\"".concat(nextFocus, "\"]"));
   }
 
-  function keyboardNavigation(instance) {
-    if (instance.events.hasOwnProperty('keyboard')) {
-      return false;
-    }
+  // function keyboardNavigation(instance) {
+  //   if (instance.events.hasOwnProperty('keyboard')) {
+  //     return false;
+  //   }
 
-    instance.events['keyboard'] = addEvent('keydown', {
-      onElement: window,
-      withCallback: function withCallback(event, target) {
-        event = event || window.event;
-        var key = event.keyCode;
+  //   instance.events['keyboard'] = addEvent('keydown', {
+  //     onElement: window,
+  //     withCallback: function withCallback(event, target) {
+  //       event = event || window.event;
+  //       var key = event.keyCode;
 
-        if (key == 9) {
-          var focusedButton = document.querySelector('.gbtn.focused');
+  //       if (key == 9) {
+  //         var focusedButton = document.querySelector('.gbtn.focused');
 
-          if (!focusedButton) {
-            var activeElement = document.activeElement && document.activeElement.nodeName ? document.activeElement.nodeName.toLocaleLowerCase() : false;
+  //         if (!focusedButton) {
+  //           var activeElement = document.activeElement && document.activeElement.nodeName ? document.activeElement.nodeName.toLocaleLowerCase() : false;
 
-            if (activeElement == 'input' || activeElement == 'textarea' || activeElement == 'button') {
-              return;
-            }
-          }
+  //           if (activeElement == 'input' || activeElement == 'textarea' || activeElement == 'button') {
+  //             return;
+  //           }
+  //         }
 
-          event.preventDefault();
-          var btns = document.querySelectorAll('.gbtn[data-taborder]');
+  //         event.preventDefault();
+  //         var btns = document.querySelectorAll('.gbtn[data-taborder]');
 
-          if (!btns || btns.length <= 0) {
-            return;
-          }
+  //         if (!btns || btns.length <= 0) {
+  //           return;
+  //         }
 
-          if (!focusedButton) {
-            var first = getNextFocusElement();
+  //         if (!focusedButton) {
+  //           var first = getNextFocusElement();
 
-            if (first) {
-              first.focus();
-              addClass(first, 'focused');
-            }
+  //           if (first) {
+  //             first.focus();
+  //             addClass(first, 'focused');
+  //           }
 
-            return;
-          }
+  //           return;
+  //         }
 
-          var currentFocusOrder = focusedButton.getAttribute('data-taborder');
-          var nextFocus = getNextFocusElement(currentFocusOrder);
-          removeClass(focusedButton, 'focused');
+  //         var currentFocusOrder = focusedButton.getAttribute('data-taborder');
+  //         var nextFocus = getNextFocusElement(currentFocusOrder);
+  //         removeClass(focusedButton, 'focused');
 
-          if (nextFocus) {
-            nextFocus.focus();
-            addClass(nextFocus, 'focused');
-          }
-        }
+  //         if (nextFocus) {
+  //           nextFocus.focus();
+  //           addClass(nextFocus, 'focused');
+  //         }
+  //       }
 
-        if (key == 39) {
-          instance.nextSlide();
-        }
+  //       if (key == 39) {
+  //         instance.nextSlide();
+  //       }
 
-        if (key == 37) {
-          instance.prevSlide();
-        }
+  //       if (key == 37) {
+  //         instance.prevSlide();
+  //       }
 
-        if (key == 27) {
-          instance.close();
-        }
-      }
-    });
-  }
+  //       if (key == 27) {
+  //         instance.close();
+  //       }
+  //     }
+  //   });
+  // }
 
   function getLen(v) {
     return Math.sqrt(v.x * v.x + v.y * v.y);
